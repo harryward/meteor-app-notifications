@@ -3,10 +3,11 @@
 Package built by <a href="http://twitter.com/harryward05">Harry Ward</a> 
 
 ## overview
+<blockquote>
+This package is built to work with <code><a href="https://github.com/raix/push">raix:push</a></code> and allow for dynamically mirroring sent push notifications inside of your application.
 
-This package is built to work with raix:push and allow for mirroring sent push notifications inside of your application.
-
-Each user will see only notifications they HAVE NOT dismissed, and that HAVE NOT expired.
+<b>Each user will see only notifications they HAVE NOT dismissed, and that HAVE NOT expired.</b>
+</blockquote>
 
 #### links & engagement tracking
 You have the ability to optionally include a relative link in your notification.
@@ -16,7 +17,7 @@ This allows you to send a push notification and have something for the user to r
 
 
 ## mongo collection
-<code>NotificationHistory = new Mongo.Collection("notification_history");</code>
+<pre>NotificationHistory = new Mongo.Collection("notification_history");</pre>
 <i>you don't hve to add this, its included in the package</i>
 
 ## installation
@@ -33,8 +34,8 @@ This allows you to send a push notification and have something for the user to r
 <img width="320px" height="auto" src="http://api.harryward.biz/dTJS/Screen%20Shot%202015-10-07%20at%209.55.41%20AM.png"><img width="320px" src="http://api.harryward.biz/dTQo/Screen%20Shot%202015-10-07%20at%209.56.28%20AM.png">
 
 ## templates
-<code>{{>notificationTeaser}} // required - dynamic notification count</code>
-<code>{{>notificationLayout}} // required - list of notifications </code>
+<pre>{{>notificationTeaser}} // required - dynamic notification count</pre>
+<pre>{{>notificationLayout}} // required - list of notifications </pre>
 
 Place these wherever you want. If you want them to be global, put them both in globally available templates
 
@@ -42,10 +43,10 @@ Place these wherever you want. If you want them to be global, put them both in g
 ## inserting a notification
 <pre>
 Meteor.call('insertNotification',{
-title:'title', //required
-text:'body', // required
-link: '/docs', // optional relative link
-expiration: new Date('1/1/2016') // has to be a future date
+    title:'title', //required
+    text:'body', // required
+    link: '/docs', // optional relative link
+    expiration: new Date('1/1/2016') // has to be a future date
 },function(err,resp){
 if(!err){
 console.log('notification insert response',resp) // for testing
