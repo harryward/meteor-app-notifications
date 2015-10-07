@@ -18,7 +18,7 @@ This allows you to send a push notification and have something for the user to r
 
 ## mongo collection
 <pre>NotificationHistory = new Mongo.Collection("notification_history");</pre>
-<i>you don't hve to add this, its included in the package</i>
+<i>you don't have to add this, its included in the package</i>
 
 ## installation
 
