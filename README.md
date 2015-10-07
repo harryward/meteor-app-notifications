@@ -47,12 +47,13 @@ Meteor.call('insertNotification',{
     text:'body', // required
     link: '/docs', // optional relative link
     expiration: new Date('1/1/2016') // has to be a future date
-},function(err,resp){
-if(!err){
-console.log('notification insert response',resp) // for testing
-}
+}, function(err,resp){ 
+    if(!err){
+    console.log('notification insert response',resp) // for testing
+    }else{
+    console.error('damn you have an error',err)
+    }
 })
-
 </pre>
 
 ## click tracking
