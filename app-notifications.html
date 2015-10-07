@@ -1,0 +1,52 @@
+<template name="notificationTeaser">
+{{#if notifsCount}}
+    <a href="#" class="notificationCount"> <i class="fa fa-certificate"></i> {{notifsCount}}</a>
+    {{/if}}
+</template>
+<template name="notificationLayout">
+            {{#if showStatus}}
+                <div class="allnotifications slideDown" style="transition:ease-in .3s">
+                    <div class="text-subhead text-center lead">
+                        Notifications<a class="pull-right fadeIn hider "><i class="fa fa-remove"></i></a>
+                    </div>
+                    {{#if currentUser}}
+                        {{#if notifs}}
+                            {{#each notifs}}
+                                <div class="row notificationRow">
+                                    <div class="col-sm-12">
+                                        <div class="appnNotif panel panel-default">
+                                            <div class="panel-heading">
+                                                <div class="panel-title">
+                                                    {{#if title}}{{title}}{{else}}title{{/if}}
+                                                    <a class="pull-right text-white removeMe"><i class="fa fa-remove"></i></a>
+                                                </div>
+                                            </div>
+<div class="panel-body">
+                                            <div class="text-caption">{{text}}</div>
+                                            <div class="text-caption text-right">{{#if link}}<a style="cursor:pointer" class="clickGo">Open <i class="fa fa-arrow-right pull-right "></i></a>{{/if}}</div>
+</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {{/each}}
+                        {{else}}
+                        <code>You have no unread notifications</code>
+                        {{/if}}
+
+                    {{else}}
+                        <div class="text-center  pleaseLogin">
+                            <div class="text-subhead text-white text-center">
+                                <div class="text-headline text-white text-center"><span class="fa fa-lock"></span></div>
+                                Please Login
+                            </div>
+                            <div class="text-caption text-white text-center">
+                                You must be logged in to view your notifications.
+                            </div>
+                            <div class="well">
+                            {{>atForm}}
+                            </div>
+                        </div>
+                    {{/if}}
+                </div>
+            {{/if}}
+</template>
